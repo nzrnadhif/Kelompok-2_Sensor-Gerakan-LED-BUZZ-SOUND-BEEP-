@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Dhafa Azmi Athallah",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 58.2, "left": 18.6, "attrs": {} },
+    { "type": "wokwi-pir-motion-sensor", "id": "pir1", "top": -178.4, "left": 88.62, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -166.8,
+      "left": 13.4,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -14.4,
+      "left": 9.05,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -160.8,
+      "left": 261,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "pir1:GND", "uno:GND.3", "black", [ "v19.2", "h-163.46", "v336", "h188" ] ],
+    [ "pir1:VCC", "uno:5V", "red", [ "v9.6", "h-153.6", "v326.4", "h178.6" ] ],
+    [ "pir1:OUT", "uno:2", "green", [ "v9.6", "h-0.14" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "uno:9", "green", [ "h0" ] ],
+    [ "led1:C", "uno:GND.3", "green", [ "v67.2", "h-38", "v374.4", "h9.6" ] ],
+    [ "bz1:2", "uno:8", "magenta", [ "h-106", "v144" ] ],
+    [ "bz1:1", "uno:GND.3", "black", [ "v86.4", "h48", "v182.4", "h0", "v124.8", "h-144" ] ]
+  ],
+  "dependencies": {}
+}
